@@ -1,0 +1,52 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "spring-boot:run",
+            "type": "shell",
+            "command": ["rm -rf services/target /tmp/services", "&&",
+                        "cp -r services /tmp/services", "&&",
+                        "mvn spring-boot:run -f /tmp/services/pom.xml -Dspring-boot.run.profiles=test"
+                    ],
+            "problemMatcher": []
+        },
+        {
+            "label": "spring-boot:verify",
+            "type": "shell",
+            "command": ["rm -rf services/target /tmp/services", "&&",
+                        "cp -r services /tmp/services", "&&",
+                        "mvn verify -f /tmp/services/pom.xml"
+                    ],
+            "problemMatcher": []
+        },
+        {
+            "label": "services-compose-test:up",
+            "type": "shell",
+            "command": ["docker compose -f compose-test.yaml up -d"],
+            "problemMatcher": [],
+            "options": {
+                "cwd": "services"
+            }
+        },
+        {
+            "label": "sites-compose-test:up",
+            "type": "shell",
+            "command": ["docker compose -f compose-test.yaml up -d"],
+            "problemMatcher": [],
+            "options": {
+                "cwd": "sites"
+            }
+        },
+        {
+            "label": "compose-test:down",
+            "type": "shell",
+            "command": ["docker compose -f sites/compose-test.yaml down -v", "&&",
+                        "docker compose -f services/compose-test.yaml down -v", "&&",
+                        "docker system prune -a --volumes -f"
+            ],
+            "problemMatcher": []
+        }
+    ]
+}

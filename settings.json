@@ -1,0 +1,16 @@
+{
+    "workbench.editor.enablePreview": false,
+    "workbench.startupEditor": "none",
+    "workbench.tree.indent": 24,
+    "workbench.colorTheme": "Visual Studio Dark",
+    "workbench.preferredDarkColorTheme": "Visual Studio Dark",
+    "window.autoDetectColorScheme": true,
+    "editor.minimap.enabled": false,
+    "redhat.telemetry.enabled": false,
+    "explorer.confirmDelete": false,
+    "git.autofetch": false,
+    "git.confirmSync": false,
+    "scm.repositories.selectionMode": "single",
+    "workbench.preferredLightColorTheme": "Visual Studio Light",
+    "java.compile.nullAnalysis.mode": "disabled"
+}
