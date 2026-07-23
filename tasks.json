@@ -6,18 +6,20 @@
         {
             "label": "spring-boot:run",
             "type": "shell",
-            "command": ["rm -rf services/target /tmp/services", "&&",
-                        "cp -r services /tmp/services", "&&",
-                        "mvn spring-boot:run -f /tmp/services/pom.xml -Dspring-boot.run.profiles=test"
+            "command": ["rm -rf services/target /tmp/outsideworx/services", "&&",
+                        "mkdir -p /tmp/outsideworx", "&&",
+                        "cp -r services /tmp/outsideworx/services", "&&",
+                        "mvn spring-boot:run -f /tmp/outsideworx/services/pom.xml -Dspring-boot.run.profiles=test"
                     ],
             "problemMatcher": []
         },
         {
             "label": "spring-boot:verify",
             "type": "shell",
-            "command": ["rm -rf services/target /tmp/services", "&&",
-                        "cp -r services /tmp/services", "&&",
-                        "mvn verify -f /tmp/services/pom.xml"
+            "command": ["rm -rf services/target /tmp/outsideworx/services", "&&",
+                        "mkdir -p /tmp/outsideworx", "&&",
+                        "cp -r services /tmp/outsideworx/services", "&&",
+                        "mvn verify -f /tmp/outsideworx/services/pom.xml"
                     ],
             "problemMatcher": []
         },

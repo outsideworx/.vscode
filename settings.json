@@ -6,11 +6,11 @@
     "workbench.preferredDarkColorTheme": "Visual Studio Dark",
     "window.autoDetectColorScheme": true,
     "editor.minimap.enabled": false,
+    "explorer.autoReveal": false,
     "redhat.telemetry.enabled": false,
     "explorer.confirmDelete": false,
     "git.autofetch": false,
     "git.confirmSync": false,
-    "scm.repositories.selectionMode": "single",
     "workbench.preferredLightColorTheme": "Visual Studio Light",
     "java.compile.nullAnalysis.mode": "disabled"
 }
