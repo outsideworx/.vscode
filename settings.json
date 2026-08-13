@@ -6,6 +6,7 @@
     "explorer.autoReveal": false,
     "explorer.compactFolders": false,
     "explorer.confirmDelete": false,
+    "files.autoSave": "off",
     "files.exclude": {
         "**/.settings": true,
         "**/.classpath": true,
