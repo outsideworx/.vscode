@@ -2,6 +2,7 @@
     "breadcrumbs.enabled": false,
     "editor.accessibilitySupport": "off",
     "editor.minimap.enabled": false,
+    "editor.stickyScroll.enabled": false,
     "explorer.autoReveal": false,
     "explorer.confirmDelete": false,
     "git.autofetch": false,
