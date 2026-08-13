@@ -7,6 +7,10 @@
     "explorer.compactFolders": false,
     "explorer.confirmDelete": false,
     "files.exclude": {
+        "**/.settings": true,
+        "**/.classpath": true,
+        "**/.factorypath": true,
+        "**/.project": true,
         "**/target": true,
         "**/build": true,
         "**/out": true,
