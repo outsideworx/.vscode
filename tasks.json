@@ -24,6 +24,15 @@
             "problemMatcher": []
         },
         {
+            "label": "home-assistant-compose-test:up",
+            "type": "shell",
+            "command": ["docker compose -f compose-test.yaml up -d"],
+            "problemMatcher": [],
+            "options": {
+                "cwd": "home-assistant"
+            }
+        },
+        {
             "label": "services-compose-test:up",
             "type": "shell",
             "command": ["docker compose -f compose-test.yaml up -d"],
@@ -44,7 +53,8 @@
         {
             "label": "compose-test:down",
             "type": "shell",
-            "command": ["docker compose -f sites/compose-test.yaml down -v", "&&",
+            "command": ["docker compose -f home-assistant/compose-test.yaml down -v", "&&",
+                        "docker compose -f sites/compose-test.yaml down -v", "&&",
                         "docker compose -f services/compose-test.yaml down -v", "&&",
                         "docker system prune -a --volumes -f"
             ],

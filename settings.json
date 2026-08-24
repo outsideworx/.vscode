@@ -12,6 +12,7 @@
     "files.autoSave": "off",
     "files.exclude": {
         "**/*.egg-info": true,
+        "**/*.idea": true,
         "**/*.iml": true,
         "**/.classpath": true,
         "**/.factorypath": true,
