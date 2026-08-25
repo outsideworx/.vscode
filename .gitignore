@@ -1,0 +1,21 @@
+# Hidden files/dirs (dot-prefixed)
+.*
+
+# Build output
+target/
+build/
+out/
+
+# Dependencies
+node_modules/
+vendor/
+
+# Python
+__pycache__/
+*.egg-info/
+
+# Java IDE
+*.iml
+
+# Misc
+AGENTS.md
