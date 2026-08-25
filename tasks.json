@@ -1,6 +1,4 @@
 {
-    // See https://go.microsoft.com/fwlink/?LinkId=733558
-    // for the documentation about the tasks.json format
     "version": "2.0.0",
     "tasks": [
         {
@@ -11,7 +9,10 @@
                         "cp -r services /tmp/outsideworx/services", "&&",
                         "mvn spring-boot:run -f /tmp/outsideworx/services/pom.xml -Dspring-boot.run.profiles=test"
                     ],
-            "problemMatcher": []
+            "problemMatcher": [],
+            "options": {
+                "cwd": "outsideworx"
+            }
         },
         {
             "label": "spring-boot:verify",
@@ -21,7 +22,10 @@
                         "cp -r services /tmp/outsideworx/services", "&&",
                         "mvn verify -f /tmp/outsideworx/services/pom.xml"
                     ],
-            "problemMatcher": []
+            "problemMatcher": [],
+            "options": {
+                "cwd": "outsideworx"
+            }
         },
         {
             "label": "home-assistant-compose-test:up",
@@ -38,7 +42,7 @@
             "command": ["docker compose -f compose-test.yaml up -d"],
             "problemMatcher": [],
             "options": {
-                "cwd": "services"
+                "cwd": "outsideworx/services"
             }
         },
         {
@@ -47,15 +51,15 @@
             "command": ["docker compose -f compose-test.yaml up -d"],
             "problemMatcher": [],
             "options": {
-                "cwd": "sites"
+                "cwd": "outsideworx/sites"
             }
         },
         {
             "label": "compose-test:down",
             "type": "shell",
             "command": ["docker compose -f home-assistant/compose-test.yaml down -v", "&&",
-                        "docker compose -f sites/compose-test.yaml down -v", "&&",
-                        "docker compose -f services/compose-test.yaml down -v", "&&",
+                        "docker compose -f outsideworx/sites/compose-test.yaml down -v", "&&",
+                        "docker compose -f outsideworx/services/compose-test.yaml down -v", "&&",
                         "docker system prune -a --volumes -f"
             ],
             "problemMatcher": []
